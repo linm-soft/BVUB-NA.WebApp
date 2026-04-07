@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QLCV Y Khoa - Hệ Thống Quản Lý Công Việc</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SPA redirect restore: khôi phục path đã được 404.html encode vào query string -->
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var p = params.get('p');
+        if (p) {
+          var q = params.get('q');
+          var newSearch = q ? '?' + q.replace(/~and~/g, '&') : '';
+          var newPath =
+            window.location.pathname.replace(/\/$/, '') +
+            p.replace(/~and~/g, '&') +
+            newSearch +
+            window.location.hash;
+          window.history.replaceState(null, null, newPath);
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/BVUB-NA.WebApp/assets/index-9a5d474d.js"></script>
+    <link rel="stylesheet" href="/BVUB-NA.WebApp/assets/index-5f2ced75.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
