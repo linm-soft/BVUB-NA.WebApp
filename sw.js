@@ -71,10 +71,29 @@ self.addEventListener('push', (event) => {
 });
 
 /* ── Notification click ─────────────────────────────────────────────────── */
+
+/**
+ * Resolve a relative actionUrl against the SW scope so it works correctly
+ * regardless of the app's base path (e.g. /BVUB-NA.WebApp/ on GitHub Pages).
+ *
+ * Examples (scope = https://linm-soft.github.io/BVUB-NA.WebApp/):
+ *   "/tasks/abc"   → "https://linm-soft.github.io/BVUB-NA.WebApp/tasks/abc"
+ *   "/"            → "https://linm-soft.github.io/BVUB-NA.WebApp/"
+ *   "https://..."  → unchanged (already absolute)
+ */
+function resolveActionUrl(actionUrl) {
+  if (!actionUrl || actionUrl === '/') return self.registration.scope;
+  // Already absolute — leave as-is
+  if (/^https?:\/\//.test(actionUrl)) return actionUrl;
+  // Relative path: strip leading slash then append to scope
+  const scope = self.registration.scope.replace(/\/$/, '');
+  return scope + '/' + actionUrl.replace(/^\/+/, '');
+}
+
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
 
-  const actionUrl = event.notification.data?.actionUrl || '/';
+  const actionUrl = resolveActionUrl(event.notification.data?.actionUrl || '/');
 
   event.waitUntil(
     clients
