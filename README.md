@@ -1,4 +1,4 @@
-# QLCV Y Khoa - React Application
+# QLCV & SC Y Khoa - React Application
 
 🏥 **Medical Task Management System**
 

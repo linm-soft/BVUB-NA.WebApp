@@ -32,13 +32,13 @@ self.addEventListener('push', (event) => {
     data = event.data.json();
   } catch {
     // Plain text fallback (shouldn't happen in production)
-    data = { title: 'QLCV Y Khoa', body: event.data.text() };
+    data = { title: 'QLCV & SC Y Khoa', body: event.data.text() };
   }
 
   // Normalise across FCM format and VAPID format
   const title = data.title
     || data.notification?.title
-    || 'QLCV Y Khoa';
+    || 'QLCV & SC Y Khoa';
 
   const body = data.body
     || data.notification?.body

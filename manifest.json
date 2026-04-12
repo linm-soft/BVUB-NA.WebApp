@@ -1,0 +1,50 @@
+{
+  "name": "Quản Lý Công Việc Và Sự Cố Y Khoa",
+  "short_name": "QLCV & SC Y Khoa",
+  "description": "Hệ thống quản lý công việc và sự cố y khoa",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "any",
+  "lang": "vi",
+  "dir": "ltr",
+  "categories": ["productivity", "medical"],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Phiếu yêu cầu",
+      "short_name": "Phiếu",
+      "description": "Xem danh sách phiếu yêu cầu",
+      "url": "./tickets",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Công việc",
+      "short_name": "Việc",
+      "description": "Xem công việc của tôi",
+      "url": "./tasks",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
